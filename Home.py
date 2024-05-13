@@ -55,4 +55,5 @@ with col2 :
         st_lottie(lottie_json)
     else:
         st.write("Failed to load Lottie animation.")
-    
+
+st.caption('<div style="text-align: center;">"Tiba di sini, pintu gerbang ilmu terbuka lebar. Selamat datang di web pembelajaran titrimetri, tempat di mana pengetahuan bertemu pengalaman untuk mengukir keahlian titrimetrimu."</div>', unsafe_allow_html=True)
