@@ -11,16 +11,14 @@ st.write=("**Welcome to Our Group!**")
 
 st.header(" ", divider="gray")
  
-group_info = """
-    **Meet Our Team:**
+st.write("**Meet Our Team:**")
 
-    - **Aditiya Prayoga** 
-    - **Faiz Awanda A** 
-    - **Ilham Alfitrah** 
-    - **Syaamil Maulana** 
-    - **Wayan Raka S** 
-    """
-st.write(group_info)
+st.write("- **Aditiya Prayoga**")
+st.write("- **Faiz Awanda A**")
+st.write("- **Ilham Alfitrah**")
+st.write("- **Syaamil Maulana**")
+st.write("- **Wayan Raka S**")
+
 
 st.header(" ", divider="gray")
 
