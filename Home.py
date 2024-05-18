@@ -20,6 +20,8 @@ st.sidebar.markdown(
 st.sidebar.markdown("---")
 st.sidebar.header("~~~ PROJECT LPK ~~~")
 
+
+
 # Pembuatan 2 kolom
 col1, col2 = st.columns([1, 2])
 
@@ -29,11 +31,12 @@ with col1 :
     st.title("TITRIMETRI")
 
     st.page_link("Home.py", label="Home", icon="🏠")
-    st.page_link("pages/Alkalimetri.py", label="Alkalimetri", icon="1️⃣")
-    st.page_link("pages/Asidimetri.py", label="Asidimetri", icon="2️⃣")
-    st.page_link("pages/Permanganometri.py", label="Permanganometri", icon="3️⃣")
-    st.page_link("pages/Iodometri.py", label="Iodometri", icon="4️⃣")
-    st.page_link("pages/Kompleksometri.py", label="Kompleksometri", icon="5️⃣")
+    st.page_link("pages/1_Asidimetri.py", label="Asidimetri", icon="1️⃣")
+    st.page_link("pages/2_Alkalimetri.py", label="Alkalimetri", icon="2️⃣")
+    st.page_link("pages/3_Permanganometri.py", label="Permanganometri", icon="3️⃣")
+    st.page_link("pages/4_Iodometri.py", label="Iodometri", icon="4️⃣")
+    st.page_link("pages/5_Kompleksometri.py", label="Kompleksometri", icon="5️⃣")
+    st.page_link("pages/6_Our Group.py", label="Our Group", icon="👥")
     st.page_link("http://www.google.com", label="Google", icon="🌎")
 
 # file json format (File path)
@@ -55,5 +58,6 @@ with col2 :
         st_lottie(lottie_json)
     else:
         st.write("Failed to load Lottie animation.")
+
 
 st.caption('<div style="text-align: center;">"Tiba di sini, pintu gerbang ilmu terbuka lebar. Selamat datang di web pembelajaran titrimetri, tempat di mana pengetahuan bertemu pengalaman untuk mengukir keahlian titrimetrimu."</div>', unsafe_allow_html=True)
