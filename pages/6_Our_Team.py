@@ -28,7 +28,7 @@ for i, member in enumerate(team_data):
 st.header(" ", divider="gray")
 
 
-st.write("_Bagian dari project Praktik Logika dan Pemograman Komputer_")
+st.write("Bagian dari project Praktik Logika dan Pemograman Komputer")
 
 st.write("Dosen Penanggung Jawab")
 st.write("Dewi Pujo Ningsih, M.Si")
