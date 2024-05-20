@@ -13,7 +13,7 @@ with col2:
 team_data = [
     {"name": "Aditiya Prayoga","IG": "@aditiya_p17", "image_url": "imgs/adit1.jpeg"},
     {"name": "Faiz Awanda A", "IG": "@faizawandaaziz", "image_url": "imgs/faiz.png"},
-    {"name": "Ilham Alfitrah", "IG": "@alfitrah", "image_url": "imgs/adit.png"},
+    {"name": "Ilham Alfitrah", "IG": "@alfitrah", "image_url": "imgs/adit.jpeg"},
     {"name": "Syaamil Maulana", "IG": "@syaamil_mln", "image_url": "imgs/syaamil.png"},
     {"name": "Wayan Raka S", "IG": "@yannnz___", "image_url": "imgs/wayan.jpg"}
 ]
