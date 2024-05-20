@@ -36,7 +36,7 @@ with col1 :
     st.page_link("pages/3_Permanganometri.py", label="Permanganometri", icon="3️⃣")
     st.page_link("pages/4_Iodometri.py", label="Iodometri", icon="4️⃣")
     st.page_link("pages/5_Kompleksometri.py", label="Kompleksometri", icon="5️⃣")
-    st.page_link("pages/6_Our Group.py", label="Our Group", icon="👥")
+    st.page_link("pages/6_Our_Team.py", label="Our Team", icon="👥")
     st.page_link("http://www.google.com", label="Google", icon="🌎")
 
 # file json format (File path)

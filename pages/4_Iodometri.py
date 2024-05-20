@@ -4,11 +4,12 @@ import numpy as np
 
 col1, col2, col3 = st.columns([1, 2, 0.5])
 with col3:
-    st.markdown=st.page_link("Home.py", label="Home")
+    st.markdown=st.page_link("Home.py", label="Home", icon="🏠")
+
 
 with col2:
-    st.title ("Iodometri")
-    
+    st.title("Iodometri")
+
 # Fungsi untuk menghitung konsentrasi
 def konsentrasi(gram, volume, BE):
     try:
@@ -41,7 +42,7 @@ def materi_utama(materi):
     return options.get(materi)
 
 # Fungsi untuk menghitung mean dan standard deviation
-def data_pengamatan(df, nama_column, mean, std_dev):
+def data_pengamatan(df, nama_column):
     # Ekstrak Spesifik Kolom
     column_data = df[nama_column]
 
@@ -50,16 +51,24 @@ def data_pengamatan(df, nama_column, mean, std_dev):
     hasil_std_dev = np.std(column_data)
     hasil_rsd = (hasil_std_dev / hasil_mean) * 100 if hasil_mean != 0 else 0
     
-     # Desimal Hasil Akhir
+    # Desimal Hasil Akhir
     hasil_mean = round(hasil_mean, 4)
     hasil_rsd = round(hasil_rsd, 2)
     hasil_std_dev = round(hasil_std_dev, 6)
 
     # Menampilkan Hasil Kalkulasi
-    st.success(f"Rata-rata dari {nama_column}: {hasil_mean}")
-    st.success(f"Standar Deviasi dari {nama_column}: {hasil_std_dev}")
+    st.info(f"Rata-rata dari {nama_column}: {hasil_mean}")
+    st.info(f"Standar Deviasi dari {nama_column}: {hasil_std_dev}")
     st.success(f"%RSD dari {nama_column}: {hasil_rsd}%")
-    
+
+def table(num_rows):
+    data = {
+        "Sample (mg)": [0.00] * num_rows,
+        "Volume Titran (mL)": [0.00] * num_rows,
+        "Normalitas Titran (N)": [0.00] * num_rows
+    }
+    return pd.DataFrame(data)
+
 def main():
     
     # Pilihan konten menggunakan selection box
@@ -68,9 +77,8 @@ def main():
         ["Materi Utama", "Kalkulator Konsentrasi", "Kalkulasi %RSD"],
         horizontal=True,
     )
-
     st.header(" ", divider="gray")
-    
+
     # Tampilk konten terkait
     if selected_content == "Kalkulator Konsentrasi":
         st.header("Kalkulator Konsentrasi")
@@ -96,39 +104,27 @@ def main():
       
     elif selected_content == "Kalkulasi %RSD":
         st.header("Kalkulasi %RSD")
-
-        # Table Data Pengamatan
-        data = {
-            "Sample (mg)": [0.00, 0.00, 0.00],
-            "Volume Titran (mL)": [0.00, 0.00, 0.00],
-            "Normalitas Titran (N)": [0.00, 0.00, 0.00]
-        }
-        df = pd.DataFrame(data)
-
-        # Definisi dari fungsi
-        mean = st.write()
-        std_dev = st.write()
+    
+        # Edit Spesifik Kolom
+        st.sidebar.header("Column Settings")
+        num_rows = st.sidebar.number_input("Jumlah Baris", min_value=3, value=3)
+        df = table(num_rows)
+        # Use sidebar.checkbox for column selection with default value as True
+        selected_columns = [col for col in df.columns if st.sidebar.checkbox(col, value=True)]
 
         # Input judul kolom untuk dikalkulasi
         column_index = st.selectbox("Pilih kolom untuk dikalkulasi :", df.columns)
-
-        # Edit Spesifik Kolom
-        st.sidebar.header("Edit Specific Column")
-        selected_columns = []
-        for column in df.columns:
-            if st.sidebar.checkbox(f"Edit {column}", value=True, key=column):
-                selected_columns.append(column)
-
+        
         updated_df = df.copy()
         if len(selected_columns) > 0:
             df_edit = df[selected_columns]
-            edited_df = st.data_editor(df_edit)
+            edited_df = st.data_editor(df_edit, height=None)
             if st.button("Kalkulasi"):
                 for column in selected_columns:
                     updated_df[column] = edited_df[column]
 
                 # Kalkulasi melalui fungsi data_pengamatan
-                data_pengamatan(updated_df, column_index, mean, std_dev)
+                data_pengamatan(updated_df, column_index)
 
 if __name__ == "__main__":
     main()
