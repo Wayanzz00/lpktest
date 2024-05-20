@@ -8,7 +8,6 @@ with col3:
 with col2:
     st.header("_Meet The Team_")
 
-st.write("")
 
 # Team Members
 team_data = [
@@ -27,15 +26,14 @@ for i, member in enumerate(team_data):
         st.image(member["image_url"], use_column_width='auto', output_format='png', caption=f"{member['name']} {member['IG']}")
 
 st.header(" ", divider="gray")
-st.write(" ")
-st.write(" ")
+
 
 st.write("_Bagian dari project Praktik Logika dan Pemograman Komputer_")
-st.write(" ")
+
 st.write("Dosen Penanggung Jawab")
 st.write("Dewi Pujo Ningsih, M.Si")
 
-st.write("")
+
 st.header(" ", divider="gray")
 st.caption('<div style="text-align: center; transform: skewX(-20deg);">Powered by Politeknik AKA BOGOR</div>', unsafe_allow_html=True)
 
