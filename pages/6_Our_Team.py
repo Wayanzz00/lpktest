@@ -25,14 +25,6 @@ for i, member in enumerate(team_data):
     with locals()[f"col{i % 5 + 1}"]:
         st.image(member["image_url"], use_column_width='auto', output_format='png', caption=f"{member['name']} {member['IG']}")
 
-st.header(" ", divider="gray")
-
-
-st.write("Bagian dari project Praktik Logika dan Pemograman Komputer")
-
-st.write("Dosen Penanggung Jawab")
-st.write("Dewi Pujo Ningsih, M.Si")
-
 
 st.header(" ", divider="gray")
 st.caption('<div style="text-align: center; transform: skewX(-20deg);">Powered by Politeknik AKA BOGOR</div>', unsafe_allow_html=True)
