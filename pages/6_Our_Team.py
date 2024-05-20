@@ -7,8 +7,7 @@ with col3:
 
 with col2:
     st.header("_Meet The Team_")
-    
-st.write('')
+   
 
 # Team Members
 team_data = [
