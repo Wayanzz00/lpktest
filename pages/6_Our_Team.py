@@ -15,7 +15,7 @@ team_data = [
     {"name": "Faiz Awanda A", "IG": "@faizawandaaziz", "image_url": "imgs/faiz.png"},
     {"name": "Ilham Alfitrah", "IG": "@alfitrah", "image_url": "imgs/adit.jpeg"},
     {"name": "Syaamil Maulana", "IG": "@syaamil_mln", "image_url": "imgs/syaamil.png"},
-    {"name": "Wayan Raka S", "IG": "@yannnz___", "image_url": "imgs/wayan.jpg"}
+    {"name": "Wayan Raka S", "IG": "@yannnz___", "image_url": "imgs/wayan1.png"}
 ]
 
 # Display Team Members
