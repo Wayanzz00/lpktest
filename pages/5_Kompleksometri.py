@@ -68,7 +68,7 @@ def table(num_rows):
     data = {
         "Sample (mg)": [0.00] * num_rows,
         "Volume Titran (mL)": [0.00] * num_rows,
-        "Normalitas Titran (N)": [0.00] * num_rows
+        "Molaritas Titran (M)": [0.00] * num_rows
     }
     return pd.DataFrame(data)
 
